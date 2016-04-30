@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.1.final using JasperReports Library version 6.2.1  -->
+<!-- 2016-03-27T02:03:50 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteNacimientosPorMes" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1f6350e2-c2b4-4b7c-bb51-90d20b2bd1fa">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Adaptador Agenda"/>
+	<property name="net.sf.jasperreports.chart.pie.ignore.duplicated.key" value="true"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[nombre]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[telefono]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[email]]></fieldDescription>
+	</field>
+	<field name="tipoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[tipoContacto]]></fieldDescription>
+	</field>
+	<field name="mes" class="java.lang.String">
+		<fieldDescription><![CDATA[mes]]></fieldDescription>
+	</field>
+	<field name="cumpleanos" class="java.util.Date">
+		<fieldDescription><![CDATA[cumpleanos]]></fieldDescription>
+	</field>
+	<sortField name="mes_orden" type="Variable"/>
+	<variable name="mes_orden" class="java.lang.Integer">
+		<variableExpression><![CDATA[$F{cumpleanos}.getMonth()]]></variableExpression>
+	</variable>
+	<group name="Grupo Mes">
+		<groupExpression><![CDATA[$F{mes}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="31" forecolor="#006699" uuid="92d3575f-3d76-409f-8464-cbe1625561fe">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{mes}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="12" width="100" height="20" forecolor="#666666" uuid="c437f756-1f23-4e5d-8176-7e05f3c5f9cd"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Mes]]></text>
+				</staticText>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="31" width="555" height="1" uuid="5f8f4bff-0f4d-4a6e-a10c-2bb025065b70"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="24">
+				<textField>
+					<reportElement x="430" y="2" width="114" height="20" uuid="b48c6ec1-7098-494d-9e9c-d02960d94ab9"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{Grupo Mes_COUNT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="335" y="2" width="95" height="20" uuid="5e03fa53-f186-46d1-8ce2-2d3a159b5203"/>
+					<textElement textAlignment="Right">
+						<font fontName="SansSerif" size="14"/>
+					</textElement>
+					<text><![CDATA[Total:]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="6fdb7582-3fcb-4b30-bedb-bb6c76bc196c"/>
+				<staticText>
+					<reportElement x="20" y="20" width="360" height="43" forecolor="#FFFFFF" uuid="40668ab7-3729-410d-9a43-dab8294ec9bc"/>
+					<textElement>
+						<font size="26" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="c6032367-0e44-4fb4-8bf0-cff3e421745a"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Nacimientos por mes]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="0704ae14-954e-4908-8daa-738dbca32c5e"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="160" height="20" uuid="7b2c4d44-4f83-41b8-b72b-7987f56227c3"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="100" height="20" uuid="fd2bb57a-a4f7-4303-90dc-888594e4ca97"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nro Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="170" height="20" uuid="a2eaad00-0b5a-43e2-b964-6b906007b436"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="125" height="20" uuid="62b323b2-b01f-446d-bbcd-34d51d9175f4"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tipo de Contacto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="9e2fa78e-e3c6-4fa9-ad35-f95adb1d247a"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="160" height="20" uuid="7a6f1375-f340-4da1-bdbd-2a4c52fc8559"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="100" height="20" uuid="0efcafc7-164c-4648-af26-8c3f7b28f340"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="170" height="20" uuid="8eb3745a-1680-45a9-9b79-bd716960fb98"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="125" height="20" uuid="ba8384c8-45aa-4f60-8bde-1ee26c1997b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tipoContacto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="10" width="515" height="13" backcolor="#E6E6E6" uuid="8720bda6-7000-4cf4-a060-11f3ce518489"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina"+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="10" width="40" height="13" backcolor="#E6E6E6" uuid="0dafb309-c655-4bfa-8f3a-35b4af27a3ff"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="10" width="100" height="13" uuid="16788584-4808-471a-b4c3-4455553bf8e7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="204">
+			<pie3DChart>
+				<chart evaluationTime="Report" theme="default">
+					<reportElement x="110" y="10" width="320" height="194" isPrintInFirstWholeBand="true" printWhenGroupChanges="Grupo Mes" uuid="ff3bdb79-9905-4199-a980-775a40f2ea76"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset maxCount="10">
+					<dataset incrementType="Group" incrementGroup="Grupo Mes"/>
+					<keyExpression><![CDATA[$F{mes}]]></keyExpression>
+					<valueExpression><![CDATA[$V{Grupo Mes_COUNT}]]></valueExpression>
+					<labelExpression><![CDATA[$F{mes}+": "+$V{Grupo Mes_COUNT}]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot labelFormat="" legendLabelFormat="">
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+		</band>
+	</summary>
+</jasperReport>
